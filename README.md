@@ -70,7 +70,7 @@ head: cannot open '10' for reading: No such file or directory
 ```
 
 - Видим, что в бэкап попал весь каталог `/etc`. Достаём из архива его содержимое.
-
+```
 [root@client-borg ~]# borg extract borg@192.168.50.20:/var/backup/::etc-2022-06-19_15:21:16 etc/
 Enter passphrase for key ssh://borg@192.168.50.20/var/backup:
 
@@ -79,10 +79,10 @@ anaconda-ks.cfg  create_repo.sh  etc  original-ks.cfg
 
 [root@client-borg ~]# ls -l etc/ | wc -l
 182
-
+```
 
 - Удаляем `/etc`.
-
+```
 [root@client-borg ~]# rm -rf /etc
 rm: cannot remove '/etc': Device or resource busy
 
@@ -96,3 +96,4 @@ rm: cannot remove '/etc': Device or resource busy
 
 [root@client-borg ~]# ls /etc | wc -l
 181
+```
